@@ -12,7 +12,7 @@ generator client {
 // to create migrations for them and apply to your dev DB.
 
 model Post {
-  id        Int      @id @default(autoincrement())
+  id        Int      @id
   title     String
   body      String
   createdAt DateTime @default(now())
