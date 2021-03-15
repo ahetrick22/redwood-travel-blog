@@ -6,12 +6,11 @@ import {
   TextField,
   Submit,
 } from '@redwoodjs/forms'
+import { useEffect, useState } from "react";
 
-const formatDatetime = (value) => {
-  return value.replace(/:\d{2}\.\d{3}\w/, '')
-}
 
 const PostForm = (props) => {
+
   const onSubmit = (data) => {
     props.onSave(data, props?.post?.id)
   }
@@ -25,7 +24,6 @@ const PostForm = (props) => {
           titleClassName="rw-form-error-title"
           listClassName="rw-form-error-list"
         />
-
         <Label
           name="title"
           className="rw-label"
@@ -41,7 +39,6 @@ const PostForm = (props) => {
           validation={{ required: true }}
         />
         <FieldError name="title" className="rw-field-error" />
-
         <Label
           name="body"
           className="rw-label"
@@ -57,7 +54,21 @@ const PostForm = (props) => {
           validation={{ required: true }}
         />
         <FieldError name="body" className="rw-field-error" />
-
+        <Label
+          name="imagePath"
+          className="rw-label"
+          errorClassName="rw-label rw-label-error"
+        >
+          Path To Image
+        </Label>
+        <TextField
+          name="imagePath"
+          defaultValue={props.post?.imagePath}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
+        <FieldError name="imagePath" className="rw-field-error" />
         <div className="rw-button-group">
           <Submit disabled={props.loading} className="rw-button rw-button-blue">
             Save

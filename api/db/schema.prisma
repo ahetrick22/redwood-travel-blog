@@ -16,4 +16,5 @@ model Post {
   title     String
   body      String
   createdAt DateTime @default(now())
+  imagePath String
 }

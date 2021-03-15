@@ -1,5 +1,6 @@
 import { db } from 'src/lib/db'
 import { requireAuth } from 'src/lib/auth'
+import { generateRandomId } from "src/services/utils/generateRandomId";
 
 export const posts = () => {
   return db.post.findMany()
@@ -14,7 +15,7 @@ export const post = ({ id }) => {
 export const createPost = ({ input }) => {
   requireAuth()
   return db.post.create({
-    data: input,
+    data: {...input, id: generateRandomId()},
   })
 }
 

@@ -4,5 +4,8 @@
   "private": true,
   "dependencies": {
     "@redwoodjs/api": "^0.27.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.2.3"
   }
 }

@@ -50,6 +50,8 @@ const PostsList = ({ posts }) => {
     awaitRefetchQueries: true,
   })
 
+  console.log(posts);
+
   const onDeleteClick = (id) => {
     if (confirm('Are you sure you want to delete post ' + id + '?')) {
       deletePost({ variables: { id } })
@@ -64,6 +66,7 @@ const PostsList = ({ posts }) => {
             <th>Id</th>
             <th>Title</th>
             <th>Body</th>
+            <th>Image Path</th>
             <th>Created at</th>
             <th>&nbsp;</th>
           </tr>
@@ -74,6 +77,7 @@ const PostsList = ({ posts }) => {
               <td>{truncate(post.id)}</td>
               <td>{truncate(post.title)}</td>
               <td>{truncate(post.body)}</td>
+              <td>{truncate(post.imagePath)}</td>
               <td>{timeTag(post.createdAt)}</td>
               <td>
                 <nav className="rw-table-actions">

@@ -69,6 +69,10 @@ const Post = ({ post }) => {
               <td>{post.body}</td>
             </tr>
             <tr>
+              <th>Image Path</th>
+              <td>{post.imagePath}</td>
+            </tr>
+            <tr>
               <th>Created at</th>
               <td>{timeTag(post.createdAt)}</td>
             </tr>
