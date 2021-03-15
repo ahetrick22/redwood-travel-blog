@@ -1,5 +1,5 @@
 import { Link, routes } from '@redwoodjs/router'
-
+import Spinner from '@chakra-ui/react';
 import Posts from 'src/components/Posts'
 
 export const QUERY = gql`
@@ -14,7 +14,7 @@ export const QUERY = gql`
   }
 `
 
-export const Loading = () => <div>Loading...</div>
+export const Loading = () => <Spinner />
 
 export const Empty = () => {
   return (

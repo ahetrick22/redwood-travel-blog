@@ -1,4 +1,5 @@
 import Post from 'src/components/Post'
+import Spinner from '@chakra-ui/react';
 
 export const QUERY = gql`
   query FIND_POST_BY_ID($id: Int!) {
@@ -12,7 +13,7 @@ export const QUERY = gql`
   }
 `
 
-export const Loading = () => <div>Loading...</div>
+export const Loading = () => <Spinner />
 
 export const Empty = () => <div>Post not found</div>
 

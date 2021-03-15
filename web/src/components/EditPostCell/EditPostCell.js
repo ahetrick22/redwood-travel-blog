@@ -2,6 +2,7 @@ import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
 import { navigate, routes } from '@redwoodjs/router'
 import PostForm from 'src/components/PostForm'
+import Spinner from '@chakra-ui/react';
 
 export const QUERY = gql`
   query FIND_POST_BY_ID($id: Int!) {
@@ -26,7 +27,7 @@ const UPDATE_POST_MUTATION = gql`
   }
 `
 
-export const Loading = () => <div>Loading...</div>
+export const Loading = () => <Spinner />
 
 export const Success = ({ post }) => {
   const [updatePost, { loading, error }] = useMutation(UPDATE_POST_MUTATION, {

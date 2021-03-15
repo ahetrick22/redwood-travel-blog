@@ -1,4 +1,5 @@
 import BlogPost from "src/components/BlogPost/BlogPost";
+import Spinner from '@chakra-ui/react';
 
 export const QUERY = gql`
   query BlogPostQuery($id: Int!) {
@@ -12,7 +13,7 @@ export const QUERY = gql`
   }
 `
 
-export const Loading = () => <div>Loading...</div>
+export const Loading = () => <Spinner />
 
 export const Empty = () => <div>Empty</div>
 

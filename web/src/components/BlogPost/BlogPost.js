@@ -1,8 +1,10 @@
 import { Link, routes } from "@redwoodjs/router";
-import {Heading, Image} from '@chakra-ui/react';
+import {Heading, Image, Skeleton } from '@chakra-ui/react';
 import dateFNSFormat from 'date-fns/format';
+import { useQuery } from "@redwoodjs/web";
 
-const BlogPost = ({post}) => {
+const BlogPost = ({post }) => {
+
   return (
     <article key={post.id}>
       <Heading>
